@@ -27,7 +27,7 @@ class MotorController extends Controller
     public function create()
     {
         $motor = Motor::all();
-        return view('motor.create', compact('motor'));
+        return view('backend.motor.create', compact('motor'));
     }
 
     /**
