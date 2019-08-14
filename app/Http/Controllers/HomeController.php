@@ -24,10 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (Laratrush::hasRole('admin')){
-            return $this->AdminDashboard();
+        if (Laratrust::hasRole('admin')){
+            return $this->adminDashboard();
         }
-        if (Laratrush::hasRole('member')){
+        if (Laratrust::hasRole('member')){
             return $this->memberDashboard();
         }
         return view('home');

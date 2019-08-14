@@ -14,7 +14,8 @@ class PembeliController extends Controller
      */
     public function index()
     {
-        //
+        $pembeli = Pembeli::all();
+        return view('pembeli.index', compact('pembeli'));
     }
 
     /**
@@ -24,7 +25,8 @@ class PembeliController extends Controller
      */
     public function create()
     {
-        //
+        $pembeli = pembeli::all();
+        return view('pembeli.create', compact('pembeli'));
     }
 
     /**
@@ -35,7 +37,14 @@ class PembeliController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pembeli = new Pembeli();
+        $pembeli->no_ktp = $request->no_ktp;
+        $pembeli->nama = $request->nama;
+        $pembeli->alamat = $request->alamat;
+        $pembeli->telepon = $request->telepon;
+        $pembeli->hp = $request->hp;
+        $pembeli->save();
+        return redirect()->route('pembeli.index');
     }
 
     /**
@@ -43,10 +52,11 @@ class PembeliController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function show($id)
     {
-        //
+        $pembeli = Pembeli::findOrFail($id);
+        return view('pembeli.show', compact('pembeli'));
     }
 
     /**
@@ -57,7 +67,8 @@ class PembeliController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pembeli = Pembeli::findOrFail($id);
+        return view('pembeli.edit', compact('pembeli'));
     }
 
     /**
@@ -69,7 +80,14 @@ class PembeliController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pembeli = Pembeli::findOrFail($id);
+        $pembeli->no_ktp = $request->no_ktp;
+        $pembeli->nama = $request->nama;
+        $pembeli->alamat = $request->alamat;
+        $pembeli->telepon = $request->telepon;
+        $pembeli->hp = $request->hp;
+        $pembeli->save();
+        return redirect()->route('pembeli.index');  
     }
 
     /**
@@ -80,6 +98,8 @@ class PembeliController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pembeli = Pembeli::findOrFail($id);
+        $pembeli->delete();
+        return redirect()->route('pembeli.index');
     }
 }

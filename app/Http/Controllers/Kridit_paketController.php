@@ -13,7 +13,8 @@ class Kridit_paketController extends Controller
      */
     public function index()
     {
-        //
+        $kridit_paket = Kridit_paket::all();
+        return view('kridit_paket.index', compact('kridit_paket'));
     }
 
     /**
@@ -23,7 +24,8 @@ class Kridit_paketController extends Controller
      */
     public function create()
     {
-        //
+        $kridit_paket = Kridit_paket::all();
+        return view('kridit_paket.create', compact('kridit_paket'));
     }
 
     /**
@@ -34,7 +36,14 @@ class Kridit_paketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pembeli = new Pembeli();
+        $pembeli->no_ktp = $request->no_ktp;
+        $pembeli->nama = $request->nama;
+        $pembeli->alamat = $request->alamat;
+        $pembeli->telepon = $request->telepon;
+        $pembeli->hp = $request->hp;
+        $pembeli->save();
+        return redirect()->route('pembeli.index');
     }
 
     /**

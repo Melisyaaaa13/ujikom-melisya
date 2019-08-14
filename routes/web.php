@@ -18,13 +18,19 @@ Route::get('/', function () {
 });
 
 Route::group(
-    ['prefix' => 'backend', 'middleware' => ['auth', 'role:admin']],function() {
+    ['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']],function() {
     Route::get('/', function () {
         return view('hallo');
     });
+    Route::get('/home', function () {
+        return view('hallo');
+    });
+    
     Route::resource('user', 'UserController');
+    Route::resource('motor', 'MotorController');
 });
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
