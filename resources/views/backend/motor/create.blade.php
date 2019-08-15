@@ -28,9 +28,8 @@
             </div>
                   <div class="form-group">
                     <label for="">Foto</label>
-                    <input type="file" name="foto" id="foto" class="form-control" required>
+                    <input type="file" name="motor_gambar" id="motor_gambar" class="form-control" required>
                   </div>
-
                     <button type="submit" name="Simpan"class="btn btn-md btn-info">Simpan</button>
                     <a name="" id="" class="btn btn-md btn-warning" href="{{route('motor.index')}}" role="button">Kembali</a>
               </form>
@@ -38,7 +37,7 @@
           </div>
         </div>
       </div><!--/.col-->
-    	
+  	
 </body>
 </html>
 ©
