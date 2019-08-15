@@ -36,9 +36,9 @@
             </div>
           </div>
         </div>
-      </div><!--/.col-->
+      </div>
   	
 </body>
 </html>
-©
+
 @endsection

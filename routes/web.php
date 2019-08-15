@@ -28,6 +28,8 @@ Route::group(
     
     Route::resource('user', 'UserController');
     Route::resource('motor', 'MotorController');
+    Route::resource('pembeli', 'PembeliController');
+
 });
 Auth::routes(['register' => false]);
 

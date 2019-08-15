@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Pembeli;
-use Auth;
 class PembeliController extends Controller
 {
     /**
@@ -15,7 +14,7 @@ class PembeliController extends Controller
     public function index()
     {
         $pembeli = Pembeli::all();
-        return view('pembeli.index', compact('pembeli'));
+        return view('backend.pembeli.index', compact('pembeli'));
     }
 
     /**

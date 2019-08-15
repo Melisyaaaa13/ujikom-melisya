@@ -81,7 +81,7 @@ class MotorController extends Controller
     public function edit($id)
     {
         $motor = Motor::findOrFail($id);
-        return view('motor.edit', compact('motor'));
+        return view('backend.motor.edit', compact('motor'));
     }
 
     /**
@@ -99,7 +99,6 @@ class MotorController extends Controller
         $motor->motor_type = $request->motor_type;
         $motor->motor_warna = $request->motor_warna;
         $motor->motor_harga = $request->motor_harga;
-        $motor->tgl_lahir = $request->tgl_lahir;
         if ($request->hasFile('motor_gambar')) {
             $file = $request->file('motor_gambar');
             $path = public_path() .

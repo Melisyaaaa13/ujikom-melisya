@@ -28,7 +28,9 @@
                     <td>{{ $data->motor_kode }}</td>
                     <td>{{ $data->motor_merk }}</td>
                     <td>{{ $data->motor_type }}</td>
+                    <td>{{ $data->motor_warna }}</td>
                     <td>{{ $data->motor_harga }}</td>
+                    <td>{{ $data->motor_gambar }}</td>
                     <td><img src="{{ asset('assets/img/motor/'.$data->motor_gambar)}}" width="100"></td>
                     <td><a href="{{ route('motor.edit', $data->id) }}" class="btn btn-warning">Edit</a></td>
                     <td><a href="{{ route('motor.show', $data->id) }}" class="btn btn-success">Detail Data</a></td>
